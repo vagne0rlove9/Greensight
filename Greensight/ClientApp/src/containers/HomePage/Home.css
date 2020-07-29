@@ -90,3 +90,9 @@
 .div-confirm-button {
     text-align: right;
 }
+
+.label-orders {
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: 10px;
+}
