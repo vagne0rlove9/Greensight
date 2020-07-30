@@ -1,0 +1,21 @@
+.label-orders {
+    font-size: 17px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+    .label-orders:hover {
+        color: #215BF0;
+        cursor: pointer;
+    }
+
+    .label-orders:focus {
+        color: #215BF0;
+    }
+
+@media screen and (max-width: 425px) {
+    .display-label {
+        display: inline;
+    }
+
+}
