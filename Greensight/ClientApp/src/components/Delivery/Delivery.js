@@ -1,4 +1,5 @@
 ﻿import React, { useState, useRef } from 'react';
+import MaskedInput from "react-text-mask";
 import './Delivery.css'
 
 function Delivery() {
@@ -28,30 +29,34 @@ function Delivery() {
             setErrorName(true);
             setNameClass("input-error");
         }
-        //if (phone.lenght === 17)
-        //    setValid(true);
-        //else setValid(false);
-        if (address !== null) {
+        if ((phone !== null) && (phone.match(/\+7+\([0-9]{3}\)+\s+[0-9]{3}-[0-9]{2}-[0-9]{2}$/) !== null)) {
             isValid.push(true);
-            setErrorAddress(false);
+            setErrorPhone(false);
             setPhoneClass("input");
         }
         else {
             isValid.push(false);
-            setErrorAddress(true);
+            setErrorPhone(true);
             setPhoneClass("input-error");
         }
-        if (comment !== null) {
+        if ((address !== null) && (address !== "")) {
             isValid.push(true);
-            setErrorComment(false);
+            setErrorAddress(false);
             setAddressClass("input");
         }
         else {
             isValid.push(false);
-            setErrorComment(true);
+            setErrorAddress(true);
             setAddressClass("input-error");
         }
-        console.log(isValid);        
+        if ((comment !== null) && (comment !== "")) {
+            isValid.push(true);
+            setErrorComment(false);
+        }
+        else {
+            isValid.push(false);
+            setErrorComment(true);
+        }
         if (!isValid.includes(false)) {
             setDisabled(true);
             buttonRef.current.style = 'background-color: #EDEEEF; color: #999999;';
@@ -81,12 +86,17 @@ function Delivery() {
                     </div>
                     <div className="div-input-right display-mobile">
                         <label className="input-label">Телефон</label>
-                        <input onChange={handleChangePhone} className={phoneClass} placeholder="+7(___) ___-__-__" />
+                        <MaskedInput
+                            mask={['+', '7', '(', /[0-9]/, /[0-9]/, /[0-9]/, ')', ' ', /[0-9]/, /[0-9]/, /[0-9]/, '-', /[0-9]/, /[0-9]/, '-', /[0-9]/, /[0-9]/]}
+                            className={phoneClass}
+                            placeholder="+7(___) ___-__-__"
+                            onChange={handleChangePhone}
+                        />
                         {errorPhone ? <label className="label-error">Телефон введено неверно, например, "+7(000) 000-00-00"</label> : null}
                     </div>
                     <div className="div-input">
                         <label className="input-label">Адрес доставки</label>
-                        <input onChange={handleChangeAddress} className={addressClass} placeholder="Город, улица, дом"/>
+                        <input onChange={handleChangeAddress} className={addressClass} placeholder="Город, улица, дом" />
                         {errorAddress ? <label className="label-error">Заполните поле</label> : null}
                     </div>
                     <div className="div-input">
