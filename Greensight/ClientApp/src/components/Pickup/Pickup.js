@@ -18,7 +18,6 @@ function Pickup() {
     }
     let mapData = {
         center: [sumX / coordinates.length, sumY / coordinates.length],
-        //center: [55.981513, 37.162149],
         zoom: 5,
     };
     let flag = [];
@@ -78,8 +77,12 @@ function Pickup() {
                                 hintContent: "Пункт выдачи",
                                 iconCaption: 'Пункт выдачи',
                             }} options={{
-                                iconContentSize: [100, 100],
-                            }} />)}
+                                iconLayout: 'default#image',
+                                iconImageHref: 'icon/geo.png',
+                                iconImageSize: [40, 40],
+                                iconImageOffset: [-20, -40]
+                                }}
+                            />)}
                         </Map>
                     </YMaps>
                 </div>
