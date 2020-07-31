@@ -1,0 +1,101 @@
+.input-container {
+    background-color: white;
+    padding: 28px 24px;
+    font-size: 14px;
+}
+
+.input {
+    font-size: 14px;
+    padding: 14px;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    width: 100%;
+}
+
+    .input:focus {
+        outline-width: 0; /* Толщина внешней границы */
+        border: 1px solid #000;
+        border-radius: 5px;
+    }
+
+.input-error {
+    font-size: 14px;
+    padding: 14px;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    width: 100%;
+    background: url("../../icon/error.png") no-repeat 96% 13.5px;
+    background-size: 22px 22px;
+}
+
+    .input-error:focus {
+        outline-width: 0; /* Толщина внешней границы */
+        border: 1px solid #000;
+        border-radius: 5px;
+    }
+
+.input-label {
+    display: block;
+}
+
+.div-input-left {
+    display: inline-block;
+    width: 50%;
+    padding-right: 24px;
+    margin-bottom: 39px;
+}
+
+.div-input-right {
+    display: inline-block;
+    width: 50%;
+    margin-bottom: 39px;
+    float: right;
+}
+
+.div-input {
+    margin-bottom: 39px;
+}
+
+.confirm-button {
+    background-color: #215BF0;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 10px 12px 10px;
+    color: white;
+    font-size: 17px;
+    width: 200px;
+}
+
+    .confirm-button:hover {
+        background-color: #0F41C3;
+    }
+
+    .confirm-button:focus {
+        outline-width: 0;
+    }
+
+.div-confirm-button {
+    text-align: right;
+}
+
+@media screen and (max-width: 425px) {
+    .display-mobile {
+        display: block;
+        width: 100%;
+        padding-right: 0px;
+        float: none;
+    }
+
+    .width-button {
+        width: 90%;
+    }
+
+    .div-align {
+        text-align: center;
+    }
+}
+
+.label-error {
+    color: red;
+    margin-top: 5px;
+}
