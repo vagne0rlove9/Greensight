@@ -13,9 +13,58 @@
         color: #215BF0;
     }
 
+
+
+.form-radio {
+    margin-bottom: 10px;
+}
+
+    .form-radio input[type=radio] {
+        display: none;
+    }
+
+    .form-radio .label-orders {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        padding-left: 25px;
+        margin-right: 0;
+        line-height: 18px;
+        user-select: none;
+    }
+
+    .form-radio .label-orders:before {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        left: 0;
+        bottom: 1px;
+        background: url(../../icon/radioOff.png) 0 0 no-repeat;
+    }
+
+    /* Checked */
+    .form-radio input[type=radio]:checked + .label-orders:before {
+        background: url(../../icon/radioOn.png) 0 0 no-repeat;
+    }
+
+.div-input-left-radio {
+    display: inline-block;
+    width: 50%;
+    padding-right: 24px;
+    margin-bottom: 26px;
+}
+
+.div-input-right-radio {
+    display: inline-block;
+    width: 50%;
+    margin-bottom: 26px;
+    float: right;
+}
+
 @media screen and (max-width: 425px) {
     .display-label {
         display: inline;
     }
-
 }

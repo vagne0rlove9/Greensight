@@ -20,7 +20,7 @@ export function Home() {
     }
     return (
         <>
-            <div className="div-delivery">
+            <div className="div-delivery container-padding">
                 <div>
                     Выберите способ доставки
                 </div>
