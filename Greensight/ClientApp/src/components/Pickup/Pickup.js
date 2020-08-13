@@ -56,21 +56,25 @@ function Pickup() {
     const handleChangePoint2 = (event) => {
         setChoice(event.target.value);
     }
+    const [isChecked, setCheck] = useState(false);
+    const handleClickRadio = (event) => {
+        setCheck(!isChecked);
+    }
     return (
         <>
             <div className="input-container">
-                <form>
-                    <div className="div-input-left display-mobile">
+                <form className="form-radio">
+                    <div className="div-input-left-radio display-mobile">
                         <input onChange={handleChangePoint1} id="point1" type="radio" name="pointOfOrders" value="Пункт выдачи заказов 1" />
                         <label htmlFor="point1" className="label-orders display-label">Пункт выдачи заказов 1</label>
                     </div>
-                    <div className="div-input-right display-mobile">
+                    <div className="div-input-right-radio display-mobile">
                         <input onChange={handleChangePoint2} id="point2" type="radio" name="pointOfOrders" value="Пункт выдачи заказов 2" />
                         <label htmlFor="point2" className="label-orders display-label">Пункт выдачи заказов 2</label>
                     </div>
                     {error ? <label className="label-error">Выберите пункт выдачи заказов</label> : null}
                 </form>
-                <div className="div-input">
+                <div className="div-input-last">
                     <YMaps>
                         <Map width={"100%"} height={400} defaultState={mapData}>
                             {coordinates.map(coordinate => <Placemark geometry={coordinate} properties={{
@@ -79,9 +83,9 @@ function Pickup() {
                             }} options={{
                                 iconLayout: 'default#image',
                                 iconImageHref: 'icon/geo.png',
-                                iconImageSize: [40, 40],
-                                iconImageOffset: [-20, -40]
-                                }}
+                                iconImageSize: [33, 39],
+                                iconImageOffset: [-17, -39]
+                            }}
                             />)}
                         </Map>
                     </YMaps>

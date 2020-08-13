@@ -80,28 +80,33 @@ function Delivery() {
             <div className="input-container">
                 <form>
                     <div className="div-input-left display-mobile">
-                        <label className="input-label">ФИО</label>
-                        <input onChange={handleChangeName} className={nameClass} placeholder="Только кириллица" />
+                        <label className="input-label" htmlFor="name">ФИО
+                            <input id="name" onChange={handleChangeName} className={nameClass} placeholder="Только кириллица" />
+                        </label>
                         {errorName ? <label className="label-error">ФИО введено неверно, например, "Иванов Иван Иванович"</label> : null}
                     </div>
                     <div className="div-input-right display-mobile">
-                        <label className="input-label">Телефон</label>
-                        <MaskedInput
-                            mask={['+', '7', '(', /[0-9]/, /[0-9]/, /[0-9]/, ')', ' ', /[0-9]/, /[0-9]/, /[0-9]/, '-', /[0-9]/, /[0-9]/, '-', /[0-9]/, /[0-9]/]}
-                            className={phoneClass}
-                            placeholder="+7(___) ___-__-__"
-                            onChange={handleChangePhone}
-                        />
+                        <label className="input-label" htmlFor="phone">Телефон
+                            <MaskedInput
+                                id="phone"
+                                mask={['+', '7', '(', /[0-9]/, /[0-9]/, /[0-9]/, ')', ' ', /[0-9]/, /[0-9]/, /[0-9]/, '-', /[0-9]/, /[0-9]/, '-', /[0-9]/, /[0-9]/]}
+                                className={phoneClass}
+                                placeholder="+7(___) ___-__-__"
+                                onChange={handleChangePhone}
+                            />
+                        </label>
                         {errorPhone ? <label className="label-error">Телефон введено неверно, например, "+7(000) 000-00-00"</label> : null}
                     </div>
                     <div className="div-input">
-                        <label className="input-label">Адрес доставки</label>
-                        <input onChange={handleChangeAddress} className={addressClass} placeholder="Город, улица, дом" />
+                        <label className="input-label" htmlFor="address">Адрес доставки
+                            <input id="address" onChange={handleChangeAddress} className={addressClass} placeholder="Город, улица, дом" />
+                        </label>
                         {errorAddress ? <label className="label-error">Заполните поле</label> : null}
                     </div>
-                    <div className="div-input">
-                        <label className="input-label">Коментарий</label>
-                        <textarea onChange={handleChangeComment} className="input" rows={4} />
+                    <div className="div-input-last">
+                        <label className="input-label" htmlFor="comment">Коментарий
+                            <textarea id="comment" onChange={handleChangeComment} className="input" rows={4} />
+                        </label>
                         {errorComment ? <label className="label-error">Заполните поле</label> : null}
                     </div>
                     <div className="div-confirm-button div-align">
