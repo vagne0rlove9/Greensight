@@ -48,7 +48,7 @@
 .div-input-left {
     display: inline-block;
     width: 50%;
-    padding-right: 24px;
+    padding-right: 12px;
     margin-bottom: 36px;
 }
 
@@ -56,7 +56,7 @@
     display: inline-block;
     width: 50%;
     margin-bottom: 36px;
-    float: right;
+    padding-left: 12px;
 }
 
 .div-input {
